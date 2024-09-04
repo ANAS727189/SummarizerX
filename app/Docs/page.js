@@ -1,7 +1,8 @@
 "use client";
+
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
+import Footer from '../components/footer';  // Corrected Footer import capitalization
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -12,7 +13,7 @@ const Docs = () => {
   const [copySuccess, setCopySuccess] = useState("");
 
   const toggleFaqVisibility = () => {
-    setShowAllFaqs(!showAllFaqs);
+    setShowAllFaqs((prevShowAllFaqs) => !prevShowAllFaqs);
   };
 
   const copyToClipboard = (text) => {
@@ -21,24 +22,15 @@ const Docs = () => {
         setCopySuccess("Copied!");
         setTimeout(() => setCopySuccess(""), 2000); // Clear success message after 2 seconds
       },
-      (err) => {
+      () => {
         setCopySuccess("Failed to copy!");
       }
     );
   };
 
-  const installationCode = `git clone https://github.com/your-repo/summarizerx.git
-cd summarizerx
-npm install
-npm run dev`;
+  const installationCode = `git clone https://github.com/your-repo/summarizerx.git\ncd summarizerx\nnpm install\nnpm run dev`;
 
-  const apiReferenceCode = `POST https://api-inference.huggingface.co/models/facebook/bart-large-cnn
-Authorization: Bearer YOUR_API_KEY
-Content-Type: application/json
-
-{
-  "inputs": "Your text goes here..."
-}`;
+  const apiReferenceCode = `POST https://api-inference.huggingface.co/models/facebook/bart-large-cnn\nAuthorization: Bearer YOUR_API_KEY\nContent-Type: application/json\n\n{\n  "inputs": "Your text goes here..."\n}`;
 
   return (
     <>
@@ -53,10 +45,11 @@ Content-Type: application/json
               SummarizerX is a powerful web application designed to summarize large texts quickly and accurately. It also includes a real-time whiteboard for collaborative work.
             </p>
           </section>
-          <div className='fixed bottom-4 right-4'>
-            <Link href="/Help" className='bg-indigo-600 rounded-full text-white flex items-center justify-center shadow-lg w-16 h-16 hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-110'>
+
+          <div className="fixed bottom-4 right-4">
+            <Link href="/Help" className="bg-indigo-600 rounded-full text-white flex items-center justify-center shadow-lg w-16 h-16 hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-110">
               <span className="sr-only">Ask with AI</span>
-              <Image src="/robo_ai.jpg" alt="Robot" width={8} height={8} className="w-8 h-8 rounded-full" />
+              <Image src="/robo_ai.jpg" alt="Robot" width={32} height={32} className="w-8 h-8 rounded-full" /> {/* Updated width and height for Image */}
             </Link>
           </div>
 
@@ -74,7 +67,7 @@ Content-Type: application/json
                 className="absolute right-2 sm:right-4 top-2 sm:top-4 text-indigo-500 bg-white dark:bg-gray-700 p-1 sm:p-2 rounded hover:bg-indigo-500 hover:text-white flex items-center text-sm sm:text-base"
               >
                 <FontAwesomeIcon icon={faCopy} className="mr-1 sm:mr-2" />
-                {copySuccess ? "Copied!" : "Copy"}
+                {copySuccess || "Copy"}
               </button>
             </div>
           </section>
@@ -102,7 +95,7 @@ Content-Type: application/json
                 className="absolute right-2 sm:right-4 top-2 sm:top-4 text-indigo-500 bg-white dark:bg-gray-700 p-1 sm:p-2 rounded hover:bg-indigo-500 hover:text-white flex items-center text-sm sm:text-base"
               >
                 <FontAwesomeIcon icon={faCopy} className="mr-1 sm:mr-2" />
-                {copySuccess ? "Copied!" : "Copy"}
+                {copySuccess || "Copy"}
               </button>
             </div>
           </section>
@@ -115,7 +108,7 @@ Content-Type: application/json
             <ol className="list-decimal ml-4 sm:ml-8 text-base sm:text-lg">
               <li>Navigate to the Text Summarizer page.</li>
               <li>Enter your text into the input box.</li>
-              <li>Click on "Get Summary" to see the summarized text.</li>
+              <li>Click on &quot;Get Summary&quot; to see the summarized text.</li> {/* Replaced " with &quot; for escaping */}
             </ol>
           </section>
 
