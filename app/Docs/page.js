@@ -53,11 +53,11 @@ Content-Type: application/json
             </p>
           </section>
           <div className='fixed bottom-4 right-4'>
-                    <Link href="/Help" className='bg-indigo-600 rounded-full text-white flex items-center justify-center shadow-lg w-16 h-16 hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-110'>
-                        <span className="sr-only">Ask with AI</span>
-                        <img src="./robo_ai.jpg" alt='Robot' className="w-8 h-8 rounded-full" />
-                    </Link>
-                </div>
+            <Link href="/Help" className='bg-indigo-600 rounded-full text-white flex items-center justify-center shadow-lg w-16 h-16 hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-110'>
+              <span className="sr-only">Ask with AI</span>
+              <img src="./robo_ai.jpg" alt='Robot' className="w-8 h-8 rounded-full" />
+            </Link>
+          </div>
 
           <section id="installation" className="mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4">Installation</h2>
@@ -65,19 +65,20 @@ Content-Type: application/json
               To set up SummarizerX locally, follow these steps:
             </p>
             <div className="relative">
-            <pre className="bg-gray-800 dark:bg-gray-600 text-white p-3 sm:p-4 rounded-lg my-3 sm:my-4 text-sm overflow-auto break-all">
-              {installationCode}
-            </pre>
-            <button
-              onClick={() => copyToClipboard(installationCode)}
-              className="absolute right-2 sm:right-4 top-2 sm:top-4 text-indigo-500 bg-white dark:bg-gray-700 p-1 sm:p-2 rounded hover:bg-indigo-500 hover:text-white flex items-center text-sm sm:text-base"
-            >
-              <FontAwesomeIcon icon={faCopy} className="mr-1 sm:mr-2" />
-              {copySuccess ? "Copied!" : "Copy"}
-            </button>
-          </div>
-  </section>
-  <section id="features" className="mb-8 sm:mb-12">
+              <pre className="bg-gray-800 dark:bg-gray-600 text-white p-3 sm:p-4 rounded-lg my-3 sm:my-4 text-sm overflow-auto break-all">
+                {installationCode}
+              </pre>
+              <button
+                onClick={() => copyToClipboard(installationCode)}
+                className="absolute right-2 sm:right-4 top-2 sm:top-4 text-indigo-500 bg-white dark:bg-gray-700 p-1 sm:p-2 rounded hover:bg-indigo-500 hover:text-white flex items-center text-sm sm:text-base"
+              >
+                <FontAwesomeIcon icon={faCopy} className="mr-1 sm:mr-2" />
+                {copySuccess ? "Copied!" : "Copy"}
+              </button>
+            </div>
+          </section>
+
+          <section id="features" className="mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4">Features</h2>
             <ul className="list-disc ml-4 sm:ml-8 text-base sm:text-lg">
               <li>Fast and accurate text summarization using Hugging Face API.</li>
@@ -85,24 +86,24 @@ Content-Type: application/json
               <li>Responsive design with theme switcher.</li>
             </ul>
           </section>
+
           <section id="api-reference" className="mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4">API Reference</h2>
             <p className="text-base sm:text-lg">
               The text summarization feature uses the Hugging Face API. Below is an example of how to use it:
             </p>
-          <div className="relative">
-            <pre className="bg-gray-800 dark:bg-gray-600 text-white p-3 sm:p-4 rounded-lg my-3 sm:my-4 text-sm overflow-auto break-all">
-              {apiReferenceCode}
-            </pre>
-            <button
-              onClick={() => copyToClipboard(apiReferenceCode)}
-              className="absolute right-2 sm:right-4 top-2 sm:top-4 text-indigo-500 bg-white dark:bg-gray-700 p-1 sm:p-2 rounded hover:bg-indigo-500 hover:text-white flex items-center text-sm sm:text-base"
-            >
-              <FontAwesomeIcon icon={faCopy} className="mr-1 sm:mr-2" />
-              {copySuccess ? "Copied!" : "Copy"}
-            </button>
-          </div>
-
+            <div className="relative">
+              <pre className="bg-gray-800 dark:bg-gray-600 text-white p-3 sm:p-4 rounded-lg my-3 sm:my-4 text-sm overflow-auto break-all">
+                {apiReferenceCode}
+              </pre>
+              <button
+                onClick={() => copyToClipboard(apiReferenceCode)}
+                className="absolute right-2 sm:right-4 top-2 sm:top-4 text-indigo-500 bg-white dark:bg-gray-700 p-1 sm:p-2 rounded hover:bg-indigo-500 hover:text-white flex items-center text-sm sm:text-base"
+              >
+                <FontAwesomeIcon icon={faCopy} className="mr-1 sm:mr-2" />
+                {copySuccess ? "Copied!" : "Copy"}
+              </button>
+            </div>
           </section>
 
           <section id="usage-guide" className="mb-8 sm:mb-12">
@@ -156,7 +157,7 @@ Content-Type: application/json
                 <strong>Q:</strong> Can I use SummarizerX for summarizing non-English texts?<br />
                 <strong>A:</strong> SummarizerX primarily supports English, but other languages may work depending on the underlying model’s capabilities.<br />
               </div>
-              
+
               {showAllFaqs && (
                 <>
                   <div>
