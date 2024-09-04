@@ -7,7 +7,7 @@ import { FaPen, FaEraser, FaTrashAlt, FaDownload } from 'react-icons/fa';
 import Link from 'next/link';
 
 // Replace with your server URL
-const socket = io('http://localhost:3001');
+const socket = io('https://summx-server.onrender.com/');
 
 const WhiteBoard = () => {
   const canvasRef = useRef(null);
