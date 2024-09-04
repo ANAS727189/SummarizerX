@@ -5,6 +5,7 @@ import Footer from '../components/footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import Image from 'next/image';  // Import Image from next/image
 
 const Docs = () => {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
@@ -55,7 +56,7 @@ Content-Type: application/json
           <div className='fixed bottom-4 right-4'>
             <Link href="/Help" className='bg-indigo-600 rounded-full text-white flex items-center justify-center shadow-lg w-16 h-16 hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-110'>
               <span className="sr-only">Ask with AI</span>
-              <img src="./robo_ai.jpg" alt='Robot' className="w-8 h-8 rounded-full" />
+              <Image src="/robo_ai.jpg" alt="Robot" width={8} height={8} className="w-8 h-8 rounded-full" />
             </Link>
           </div>
 
