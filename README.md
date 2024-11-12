@@ -1,4 +1,5 @@
 # SummarizerX 📚✨
+### Advanced Text Summarization & Collaboration Tool
 
 SummarizerX is a powerful web application designed to summarize large texts quickly and accurately. It also includes a real-time collaborative whiteboard feature.
 
